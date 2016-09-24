@@ -18,5 +18,13 @@ youRadioApp.config(function($stateProvider, $urlRouterProvider) {
     .state('list', {
       url: "/list",
       templateUrl: "templates/list.html"
+    })
+    .state('home', {
+      url: "/home",
+      templateUrl: "templates/home.html"
+    })
+    .state('contacts', {
+      url: "/contacts",
+      templateUrl: "templates/contacts.html"
     });
 });
