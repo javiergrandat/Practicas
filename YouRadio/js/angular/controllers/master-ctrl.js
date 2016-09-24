@@ -12,4 +12,6 @@ youRadioApp.controller('MasterCtrl', MasterCtrl);
      {'name': 'MOTOROLA XOOM™',
       'snippet': 'The Next, Next Generation tablet.'}
     ];
+
+    $scope.username = 'jgrandat'
   }
