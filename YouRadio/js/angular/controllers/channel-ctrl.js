@@ -12,7 +12,7 @@ function ChannelCtrl($scope, $state, channelService) {
   }
 
   $scope.goToPrograms = function(channelId) {
-    $state.go("programs",{"channelId":channelId})
+    $state.go("programs",{"channelId":channelId});
     //alert(channelId);
   }
   

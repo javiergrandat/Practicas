@@ -1,0 +1,41 @@
+<div ng-controller="PreguntasCtrl">
+  <div class="row">
+   Categorias
+ </div>
+ <div class="row pull-right">
+   {{puntos}} puntos
+ </div>
+  <form name="userForm" ng-model="userForm" ng-submit="submit()">
+  <div class="row">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th scope="row">
+          {{pregunta.texto}}
+          </th>
+        </tr>  
+          <tr>
+          <th scope="row">
+          <input type="radio" name="opcion1" ng-model="opcionsel" ng-value="pregunta.respuesta1">  {{pregunta.respuesta1}}</th>
+          </tr>
+          <tr>
+          <th scope="row">
+          <input type="radio" name="opcion2" ng-model="opcionsel" ng-value="pregunta.respuesta2">  {{pregunta.respuesta2}}</th>
+          </tr>
+          <tr>
+          <th scope="row">
+          <input type="radio" name="opcion3" ng-model="opcionsel" ng-value="pregunta.respuesta3">   {{pregunta.respuesta3}}</th>
+          </tr>
+          <tr>
+          <th scope="row">
+          <input type="radio" name="opcion4" ng-model="opcionsel" ng-value="pregunta.respuesta4">   {{pregunta.respuesta4}}</th>
+          </tr>
+          <tr>
+          <th scope="row"></th>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <button type="submit" class="btn btn-default">Enviar</button>
+  </form>
+</div>

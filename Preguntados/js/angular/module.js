@@ -1,0 +1,1 @@
+var PreguntadosApp = angular.module('Preguntados',['ui.bootstrap','ui.router']);
