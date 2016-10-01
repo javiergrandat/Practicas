@@ -8,7 +8,7 @@ function ContactCtrl($scope, contactService) {
   init();
 
   function init(){
-    alert($scope.username);
+    //alert($scope.username);
    $scope.contacts=contactService.getAll();
   }
 

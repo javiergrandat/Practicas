@@ -1,0 +1,13 @@
+<div ng-controller="ProgramCtrl">
+  <div class="row">
+    <table class="table">
+      <tbody>
+        <tr ng-repeat="program in programs">
+          <th scope="row">{{program.id}}</th>
+          <th scope="row">{{program.name}}</th>
+          <th scope="row">{{program.channel}}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
