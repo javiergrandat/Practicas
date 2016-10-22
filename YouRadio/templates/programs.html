@@ -1,11 +1,32 @@
 <div ng-controller="ProgramCtrl">
+  
+  <!--div class="row" >
+    <div class="col-md-6 col-md-offset-3 text-center">
+      <form name="userForm" ng-model="userForm" ng-submit="submit(program)">
+        <div class="form-group">
+          <label for="Id">Id</label>
+          <input type="text" class="form-control" ng-model="program.id" id="Id" placeholder="Id">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="nombre" class="form-control" ng-model="program.name" id="nombre" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Id Canal</label>
+          <input type="nombre" disabled="" class="form-control" ng-model="program.idChannel" id="idChannel" placeholder="" value="program.idChannel">
+        </div>
+        <button type="submit" class="btn btn-default">Register</button>
+      </form>
+    </div>
+  </div>
+</br>-->
+
   <div class="row">
     <table class="table">
       <tbody>
         <tr ng-repeat="program in programs">
           <th scope="row">{{program.id}}</th>
-          <th scope="row">{{program.name}}</th>
-          <th scope="row">{{program.channel}}</th>
+          <th ng-click="goToMessagePrograms(program.$id)" scope="row">{{program.name}}</th>
         </tr>
       </tbody>
     </table>

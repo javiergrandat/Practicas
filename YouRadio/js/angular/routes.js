@@ -5,7 +5,7 @@ youRadioApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('index', {
       url: "/index",
-      templateUrl: "templates/initial.html"
+      templateUrl: "templates/home.html"
     })
     .state('register', {
       url: "/register",
@@ -34,5 +34,9 @@ youRadioApp.config(function($stateProvider, $urlRouterProvider) {
     .state('programs', {
       url: "/programs/:channelId",
       templateUrl: "templates/programs.html"
+    })
+    .state('messageprograms', {
+      url: "/messageprograms/:programId",
+      templateUrl: "templates/messageprograms.html"
     });
 });

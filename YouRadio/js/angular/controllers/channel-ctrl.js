@@ -1,4 +1,4 @@
-youRadioApp.controller('ChannelCtrl',ChannelCtrl);
+/*youRadioApp.controller('ChannelCtrl',ChannelCtrl);
 
 
 ChannelCtrl.$inject = ['$scope', '$state', 'channelService'];
@@ -17,3 +17,35 @@ function ChannelCtrl($scope, $state, channelService) {
   }
   
   }
+
+  */
+
+  youRadioApp.controller('ChannelCtrl', ChannelCtrl);
+
+
+ChannelCtrl.$inject = ['$scope','$state', 'channelService'];
+
+function ChannelCtrl($scope, $state, channelService) {
+
+  init();
+
+  function init(){
+   channelService.getAll().then(function(data){
+    $scope.channels=data;
+   }).catch(function(error){
+    console.log(error);
+   });
+  }
+
+  $scope.submit = function (channel)
+  {
+  	$scope.channels.$add(channel);
+  	alert('graba');
+  }
+
+  $scope.goToPrograms = function(channel){
+  	//alert(channel);
+    $state.go("programs", {"channelId":channel});
+  }
+  
+}

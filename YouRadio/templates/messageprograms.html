@@ -1,0 +1,22 @@
+<div ng-controller="MessageprogramCtrl">
+  <div class="row pull-right">
+    <form class="form-inline" ng-submit="submit(messagetext)" ng-model="addForm" name="addForm">
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="messagetext" id="mensaje" placeholder="Mensaje">
+        <!--input type="text" class="form-control" ng-model="messageprogram.username" id="usario" placeholder="Usuario">-->
+      </div>
+      <button type="submit" class="btn btn-default">+</button>
+    </form>
+  </div>
+  <div class="row">
+    <table class="table">
+      <tbody>
+        <tr ng-repeat="messageprogram in messageprograms">
+          <th scope="row">{{messageprogram.message}}</th>
+          <th scope="row">{{messageprogram.username}}</th>
+          </button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

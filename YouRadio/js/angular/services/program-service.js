@@ -1,4 +1,4 @@
-youRadioApp.factory('programService', programService); 
+/*youRadioApp.factory('programService', programService); 
 
 programService.$inject = [];
 
@@ -43,4 +43,42 @@ function programService() {
         
     };
 
+}
+
+*/
+
+
+youRadioApp.factory('programService', programService); 
+
+programService.$inject = ['crudfactory'];
+
+function programService(crudfactory) {
+
+  //var channels=[{"id":1, "name":"RadioUno"}, {"id":2, "name":"RCNRadio"}];
+   var programs = [{'id':'1','name': 'El pulso del futbol','idChannel':'1'},
+     {'id':'2','name': 'La Luciernaga','idChannel':'1'},
+     {'id':'3','name': 'Deportes','idChannel':'2'},
+     {'id':'3','name': 'Don Ebrio','idChannel':'3'}];
+
+    var service = {
+        getAll:getAll
+    };
+    return service;
+
+    function getAll(channelId) {
+      return crudfactory.synchronizedModel("programs").$load().then(completeSuccess).catch(completeFail);
+
+      function completeSuccess(data){
+        //alert(channelId);
+        var filter = data.$filterEqual("idChannel",channelId);
+        return filter;
+        return data;
+      }
+
+      function completeFail(error){
+      return error;
+      }
+      //return channels;
+
+    };
 }

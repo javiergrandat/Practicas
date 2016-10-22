@@ -1,8 +1,8 @@
 PreguntadosApp.factory('preguntasService', preguntasService); 
 
-preguntasService.$inject = [];
+preguntasService.$inject = ['localStorageService'];
 
-function preguntasService() {
+function preguntasService(localStorageService) {
 
      var preguntasjson = [{"Categoria":"geografia","Preguntas":[{
                                                         "texto":"Cual es la capital de Colombia",
@@ -103,37 +103,16 @@ function preguntasService() {
                       ];
 
     var service = {
-        getPregunta: getPregunta
+        getPregunta: getPregunta,
+        setPuntos: setPuntos,
+        getPuntos: getPuntos
     };
     return service;
 
     function getPregunta(Categoria) {
 
-        //$.grep( programs, function( n, i ) {
-        //return n.channel===channelId;
-        //});
-        //alert(channelId);
-
-        //JSON.parse(jsondata).filter(entry) {
-        // return entry.channel === channelId;
-        //};
 
         var preguntas = []
-
-        //var data = programs.data
-
-        /*for (var i=0;i<programs.length;i++) {
-
-            if (programs[i].channel == channelId) {
-
-                    programsbychannel.push({'id':programs[i].id,'name': programs[i].name,'channel':programs[i].channel});
-
-            }
-
-        }*/
-
-
-
 
         for (var i=0 ; i < preguntasjson.length ; i++) {
             if (angular.equals(preguntasjson[i]["Categoria"], Categoria)) {
@@ -152,6 +131,26 @@ function preguntasService() {
         return preguntas[aleatorio];
 
     };
+
+    function setPuntos()
+    {
+        var puntos;
+        puntos = Number(localStorageService.get("Puntos","0"));
+        if (puntos == null) {
+            puntos = 0;
+        }
+        localStorageService.set("Puntos",puntos + 20);
+    }
+
+    function getPuntos()
+    {
+        var puntos;
+        puntos = Number(localStorageService.get("Puntos","0"));
+        if  (puntos == null) {
+            puntos = 0;
+        }
+        return puntos;
+    }
 
         
     };

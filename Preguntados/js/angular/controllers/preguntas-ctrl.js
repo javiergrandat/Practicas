@@ -13,6 +13,7 @@ function PreguntasCtrl($scope, $stateParams, preguntasService) {
    //alert($scope.pregunta.respuesta1);
    $scope.opcionsel=$scope.pregunta.respuesta1;
    $scope.Categoria = $stateParams.Categoria;
+   $scope.puntos = preguntasService.getPuntos();
   }
 
   $scope.submit = function () {
@@ -20,7 +21,7 @@ function PreguntasCtrl($scope, $stateParams, preguntasService) {
   		if ($scope.pregunta.correcta == $scope.opcionsel)
   		{
   			alert("Respuesta correcta");
-  			$scope.puntos = $scope.puntos + 20;
+  			preguntasService.setPuntos();
   		}
   	  	else
   	  	{
